@@ -1,16 +1,15 @@
 import React, { Component } from "react"
-import { existingReservations } from "../../apiCalls"
 import "./Reservation.css"
 
-const Reservation = ({date, name, number, time}) => {
+const Reservation = ({id, date, name, number, time, deleteClick}) => {
 
     return (
-        <div className="reservation-card">
+        <div className="reservation-card" id={id}>
             <div>{name}</div>
             <div>{date}</div>
             <div>{time}</div>
             <div>{number}</div>
-            <button>Cancel</button>
+            <button onClick={event => deleteClick(event)}>Cancel</button>
         </div>
     )
 }
